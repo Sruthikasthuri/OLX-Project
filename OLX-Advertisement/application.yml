@@ -1,0 +1,25 @@
+server:
+  port: 9090
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+         "*"
+        exclude:
+        - health
+        - info
+      base-path: "/my-actuator"
+  endpoint:
+    shutdown:
+     enabled: true
