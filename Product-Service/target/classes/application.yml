@@ -1,0 +1,23 @@
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+server:
+  port: 9090
+spring:
+  application:
+    name: product-services
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+  zipkin:
+    base-url: http://127.0.0.1:9411/
